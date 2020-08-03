@@ -1,0 +1,18 @@
+<div class="container">
+	<h1>Blocks on chain</h1>
+	<p>Each card represents a medical record on the chain. Click on a block to see the data stored inside.</p>
+	<app-block-view 
+		*ngFor="let block of blocks" 
+		[block]="block"
+		(click)="showTransactions(block)"
+	></app-block-view>
+</div>
+<br><br>
+
+<div class="container">
+	<h1>Medical records inside block</h1>
+
+	<app-transactions-table
+		[transactions]="selectedBlock.transactions"
+	></app-transactions-table>
+</div>
